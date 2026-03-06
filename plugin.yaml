@@ -1,0 +1,20 @@
+id: lumide_rust
+name: 'Rust'
+description: 'Rust language support for Lumide IDE via rust-analyzer.'
+entry_point: 'bin/main.dart'
+
+activation_events:
+  - 'workspaceContains:Cargo.toml'
+  - 'workspaceContains:*.rs'
+
+permissions:
+  - shell:
+      - rust-analyzer
+      - cargo
+      - rustup
+
+configuration:
+  - key: rust-lsp.path
+    type: filePath
+    title: 'Rust-Analyzer Executable Path'
+    description: 'Path to the rust-analyzer executable. If empty, the system PATH will be used.'
